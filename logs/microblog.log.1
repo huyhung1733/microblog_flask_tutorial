@@ -1,0 +1,106 @@
+2022-03-31 08:12:22,100 ERROR: Exception on /messages [GET] [in /home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py:1454]
+Traceback (most recent call last):
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/hung/Desktop/Flask_tutorial/app/main/routes.py", line 203, in messages
+    return render_template('messages.html', messages=messages.items,
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1068, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/jinja2/environment.py", line 997, in get_template
+    return self._load_template(name, globals)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/jinja2/environment.py", line 958, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 125, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: messages.html
+2022-03-31 08:12:23,388 ERROR: Exception on /messages [GET] [in /home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py:1454]
+Traceback (most recent call last):
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/hung/Desktop/Flask_tutorial/app/main/routes.py", line 203, in messages
+    return render_template('messages.html', messages=messages.items,
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1068, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/jinja2/environment.py", line 997, in get_template
+    return self._load_template(name, globals)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/jinja2/environment.py", line 958, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 125, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: messages.html
+2022-03-31 08:12:28,324 ERROR: Exception on /export_posts [GET] [in /home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py:1454]
+Traceback (most recent call last):
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/redis/connection.py", line 559, in connect
+    sock = self._connect()
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    raise err
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/redis/connection.py", line 603, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/hung/Desktop/Flask_tutorial/app/main/routes.py", line 213, in export_posts
+    current_user.launch_task('export_posts', _('Exporting posts...'))
+  File "/home/hung/Desktop/Flask_tutorial/app/models.py", line 176, in launch_task
+    rq_job = current_app.task_queue.enqueue('app.tasks.' + name, self.id,
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/rq/queue.py", line 502, in enqueue
+    return self.enqueue_call(
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/rq/queue.py", line 400, in enqueue_call
+    return self.enqueue_job(job, pipeline=pipeline, at_front=at_front)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/rq/queue.py", line 560, in enqueue_job
+    job.save(pipeline=pipe)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/rq/job.py", line 650, in save
+    if self.get_redis_server_version() >= StrictVersion("4.0.0"):
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/rq/job.py", line 658, in get_redis_server_version
+    self.redis_server_version = get_version(self.connection)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/rq/utils.py", line 283, in get_version
+    version_string = connection.info("server")["redis_version"]
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/redis/client.py", line 1306, in info
+    return self.execute_command('INFO', section)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/redis/client.py", line 898, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/redis/connection.py", line 1192, in get_connection
+    connection.connect()
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/redis/connection.py", line 563, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to None:6379. Connection refused.

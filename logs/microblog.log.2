@@ -1,0 +1,112 @@
+2022-03-31 08:06:01,167 ERROR: Exception on /auth/login [POST] [in /home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py:1454]
+Traceback (most recent call last):
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1770, in _execute_context
+    self.dialect.do_execute(
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: user.token
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/hung/Desktop/Flask_tutorial/app/auth/routes.py", line 19, in login
+    user = User.query.filter_by(username=form.username.data).first()
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 2760, in first
+    return self.limit(1)._iter().first()
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/sqlalchemy/orm/query.py", line 2844, in _iter
+    result = self.session.execute(
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1689, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1582, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/sqlalchemy/sql/elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1451, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1813, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1994, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/sqlalchemy/engine/base.py", line 1770, in _execute_context
+    self.dialect.do_execute(
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/sqlalchemy/engine/default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: user.token
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen, user.token AS user_token, user.token_expiration AS user_token_expiration, user.last_message_read_time AS user_last_message_read_time 
+FROM user 
+WHERE user.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('huyhung2', 1, 0)]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+2022-03-31 08:07:42,366 INFO: Microblog startup [in /home/hung/Desktop/Flask_tutorial/app/__init__.py:89]
+2022-03-31 08:08:01,257 INFO: Microblog startup [in /home/hung/Desktop/Flask_tutorial/app/__init__.py:89]
+2022-03-31 08:08:14,772 INFO: Microblog startup [in /home/hung/Desktop/Flask_tutorial/app/__init__.py:89]
+2022-03-31 08:11:12,368 INFO: Microblog startup [in /home/hung/Desktop/Flask_tutorial/app/__init__.py:89]
+2022-03-31 08:12:06,514 ERROR: Exception on /search [GET] [in /home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py:1454]
+Traceback (most recent call last):
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/hung/Desktop/Flask_tutorial/app/main/routes.py", line 168, in search
+    return render_template('search.html', title=_('Search'), posts=posts,
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1068, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/jinja2/environment.py", line 997, in get_template
+    return self._load_template(name, globals)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/jinja2/environment.py", line 958, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 125, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: search.html
+2022-03-31 08:12:18,312 ERROR: Exception on /search [GET] [in /home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py:1454]
+Traceback (most recent call last):
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/hung/Desktop/Flask_tutorial/app/main/routes.py", line 168, in search
+    return render_template('search.html', title=_('Search'), posts=posts,
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/templating.py", line 148, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1068, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/jinja2/environment.py", line 997, in get_template
+    return self._load_template(name, globals)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/jinja2/environment.py", line 958, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/jinja2/loaders.py", line 125, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/templating.py", line 59, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/hung/Desktop/Flask_tutorial/venv/lib/python3.8/site-packages/flask/templating.py", line 95, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: search.html
